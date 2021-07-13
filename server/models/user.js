@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   created: {
     type: Date,
@@ -36,7 +37,7 @@ userSchema.methods.comparePassword = async function(attempt, next){
   try {
     return await bcrypt.compare(attempt, this.password)
   } catch(err){
-    next(err)
+    return next(err)
   }
 }
 
