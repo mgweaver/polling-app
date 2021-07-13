@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const db = require('./models/index')
 const handle = require('./handlers/index')
+const routes = require('./routes')
 
 const app = express()
 const PORT = process.env.PORT
@@ -12,7 +13,8 @@ const PORT = process.env.PORT
 app.use(cors())
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.send('hello'))
+//app.get('/', (req, res) => res.send('hello'))
+app.use('/api/auth', routes.auth)
 
 app.use(handle.notFound)
 app.use(handle.errors)
