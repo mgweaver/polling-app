@@ -4,7 +4,7 @@
   "description": "Poll App",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",  
+    "start": "nodemon",
     "seed": "node seed.js"
   },
   "author": "Mason Weaver",
