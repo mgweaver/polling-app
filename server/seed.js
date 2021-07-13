@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.MONGO_URI);
 
 const db = require('./models');
 
 const users = [
   { username: 'username', password: 'password' },
-  { username: 'kelvin', password: 'password' },
+  { username: 'mason', password: 'password123' },
 ];
 
 const polls = [
